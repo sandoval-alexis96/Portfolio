@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Alexis Sandoval</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="encabezado">
         <nav class="navegacion">
-            <a class="navegacion__logo" href="#presentacion">
-                <h2 class="navegacion__titulo">Alexis Sandoval</h2>
-            </a>
-            <ul class="menu">
-                <li class="menu__item">
-                    <a class="menu__enlace" href="#presentacion">Inicio</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__enlace" href="#sobre-mi">Sobre mi</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__enlace" href="#proyectos">Proyectos</a>
-                </li>
-            </ul>
-            <button class="navegacion__tema" aria-label="Cambiar tema">🌓</button>
+            <div class="navegacion__contenedor-izquierdo">
+                <a class="navegacion__logo" href="#presentacion">
+                    <img class="navegacion__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo de Alexis">
+                    <h2 class="navegacion__titulo">Alexis Sandoval</h2>
+                </a>
+              </div>
+            <div class="navegacion__contenedor-derecho">
+                <ul class="navegacion__menu">
+                    <li class="navegacion__menu-item">
+                        <a class="navegacion__menu-enlace" href="#presentacion">Inicio</a>
+                    </li>
+                    <li class="navegacion__menu-item">
+                        <a class="navegacion__menu-enlace" href="#sobre-mi">Sobre mi</a>
+                    </li>
+                    <li class="navegacion__menu-item">
+                        <a class="navegacion__menu-enlace" href="#proyectos">Proyectos</a>
+                    </li>
+                </ul>
+                <button class="navegacion__tema" aria-label="Cambiar tema">🌓</button>
+            </div>
         </nav>
     </header>
     <main class="principal">
@@ -112,24 +120,24 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <h4>Secciones</h4>
-            <ul>
-                <li>
-                  <a href="#presentacion">Inicio</a>
+        <div class="pie-de-pagina__grupo">
+            <h4 class="pie-de-pagina__titulo">Secciones</h4>
+            <ul class="pie-de-pagina__lista">
+                <li class="pie-de-pagina__item">
+                  <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
                 </li>
-                <li>
-                  <a href="#sobre-mi">Sobre mi</a
+                <li class="pie-de-pagina__item">
+                  <a href="#sobre-mi" class="pie-de-pagina__enlace">Sobre mi</a
                   >
                 </li>
-                <li>
-                  <a href="#proyectos">Proyectos</a
+                <li class="pie-de-pagina__item">
+                  <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
                   >
                 </li>
             </ul>
         </div>
-        <div>
-            <p>©️Copyright 2024</p>
+        <div class="pie-de-pagina__grupo pie-de-pagina__grupo-copyright">
+            <p class="pie-de-pagina__copyright">©️Copyright 2024</p>
         </div>
     </footer>
 </body>
