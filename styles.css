@@ -481,22 +481,44 @@ body {
 /* Proyectos*/
 .proyectos {
     width: 100%;
-    padding: 1rem 8rem;
+    padding: 2rem 8rem;
     background: var(--presentacion-background);
 }
 
 .proyectos__titulo {
-    color: #dddddd;
-    text-align: center;
+    width: 100%;
+    text-align: start;
     font-size: 2.5rem;
-    padding-bottom: 20px;
+    color: #dddddd;
+    font-weight: bold;
     border-bottom: 2px solid #dddddd;
+    padding-bottom: 20px;
+}
+
+.proyectos__titulo2 {
+    width: 100%;
+    text-align: start;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #f8021f;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+
+.proyectos__titulo2::after {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background-color: #f8021f;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .proyectos__contenedor {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     padding-top: 30px;
 }
@@ -509,7 +531,7 @@ body {
 
 .proyectos__tarjeta {
     width: 100%;
-    height: 100%;
+    height: 70%;
     position: relative;
     transition: transform 1.5s;
     transform-style: preserve-3d;
@@ -523,18 +545,14 @@ body {
 
 .proyectos__cara {
     width: 100%;
-    height: 100%;
     position: absolute;
     border-radius: 1rem;
     backface-visibility: hidden;
-    box-shadow: 0 0 10px 2px rgba(50, 50, 50, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     color: #fff;
-    padding: 0.4rem;
     box-sizing: border-box;
     background: #991215;
     background: linear-gradient(180deg,rgba(153, 18, 21, 1) 0%, rgba(92, 12, 12, 1) 50%, rgba(41, 5, 6, 1) 100%);
@@ -543,6 +561,8 @@ body {
 
 .proyectos__cara--trasera {
     transform: rotateY(180deg) rotateZ(180deg);
+    width: 100%;
+    height: 100%;
 }
 
 .proyectos__imagen {
@@ -553,15 +573,19 @@ body {
 }
 
 .proyectos__nombre {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #fff;
+    color: #dddddd;
+    text-align: start;
+    border-bottom: 3px solid #dddddd;
+    margin-bottom: 20px;
 }
 
 .proyectos__descripcion {
     font-size: 1.2rem;
     line-height: 1.4;
     color: #fff;
+    padding: 20px;
 }
 
 /* Pie de página */
@@ -629,4 +653,123 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 1366px) {
+    /* Barra de navegación */
+    .navegacion__menu-enlace {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    .navegacion__logo-imagen {
+        height: 40px;
+    }
+      
+    .navegacion__titulo {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    /* Presentación */
+    .presentacion__saludo {
+        font-size: 1.5rem;
+        font-weight: 200;
+        
+    }
+    
+    .presentacion__nombre {
+        font-size: 4rem;
+        
+    }
+    
+    .presentacion__descripcion {
+        max-width: 600px;
+        font-size: 1.6rem;
+        
+    }
+
+    .presentacion__boton {
+        height: 50px;
+        width: 160px;
+        font-size: 17px;
+        font-weight: 600;
+        margin-top: 30px;
+    }
+
+    .presentacion__iconos-fondo {
+        width: 450px;
+        height: 465px
+    }
+
+    /* Sección Acerca de Mi */
+    .sobre-mi__titulo {
+        font-size: 2rem;
+        padding-bottom: 15px;
+    }
+    
+    .sobre-mi__titulo2 {
+        font-size: 1.3rem;
+        margin-left: 10px;
+    }
+    
+    .sobre-mi__titulo2::after {
+        width: 30px;
+        height: 2px;
+        margin-left: 10px;
+    }
+
+    .sobre-mi__contenedor {
+        padding-top: 20px;
+    }
+
+    .seccion-perfil__contenido {
+        gap: 0.4rem;
+        padding: 20px 20px;
+        font-size: 16px;
+    }
+
+    .seccion-perfil__tecnologias {
+        padding: 10px 80px;
+    }
+
+    .tecnologia__nombre {
+        color: #dddddd;
+        font-size: 12px;
+    }
+
+    /* Sección Proyectos */
+    .proyectos__titulo {
+        font-size: 2rem;
+        padding-bottom: 15px;
+    }
+    
+    .proyectos__titulo2 {
+        font-size: 1.3rem;
+        margin-left: 10px;
+    }
+    
+    .proyectos__titulo2::after {
+        width: 30px;
+        height: 2px;
+        margin-left: 10px;
+    }
+
+    .proyectos__contenedor {
+        gap: 1.5rem;
+        margin: 20px;
+    }
+
+    .proyectos__item {
+        max-width: 410px;
+        margin-top: 20px;
+    }
+
+    .proyectos__nombre {
+        font-size: 1.2rem;
+    }
+
+    .proyectos__descripcion {
+        font-size: 0.9rem;
+    }
 }
