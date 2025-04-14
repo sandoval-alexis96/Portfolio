@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/logos/logo-navegacion.png" type="image/x-icon" />
 </head>
 <body>
     <header class="encabezado">
@@ -15,7 +16,7 @@
             <div class="navegacion__contenedor-izquierdo">
                 <a class="navegacion__logo" href="#presentacion">
                     <img class="navegacion__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo de Alexis">
-                    <h2 class="navegacion__titulo">Alexis Sandoval</h2>
+                    <h2 class="navegacion__titulo">Portfolio</h2>
                 </a>
               </div>
             <div class="navegacion__contenedor-derecho">
@@ -24,7 +25,7 @@
                         <a class="navegacion__menu-enlace" href="#presentacion">Inicio</a>
                     </li>
                     <li class="navegacion__menu-item">
-                        <a class="navegacion__menu-enlace" href="#sobre-mi">Sobre mi</a>
+                        <a class="navegacion__menu-enlace" href="#acerca-de-mi">Acerca de mi</a>
                     </li>
                     <li class="navegacion__menu-item">
                         <a class="navegacion__menu-enlace" href="#proyectos">Proyectos</a>
@@ -35,40 +36,98 @@
         </nav>
     </header>
     <main class="principal">
-        <section class="presentacion" id="presentacion">
+        <section class="presentacion" id="presentacion" aria-labelledby="titulo-presentacion">
+            <canvas id="neuronas-canvas"></canvas>
             <div class="presentacion__contenedor">
-                <h1 class="presentacion__saludo">Hola, soy</h1>
-                <h2 class="presentacion__nombre">Alexis Sandoval</h2>
-                <p class="presentacion__descripcion">Estudiante de Ciencias de Datos | Desarrollador Web</p>
-                <div class="presentacion__acciones">
-                    <a href="#sobre-mi" class="presentacion__boton" role="button">Sobre mí</a>
-                    <a href="tu-cv.pdf" class="presentacion__boton presentacion__boton-cv" target="_blank" role="button">Descargar CV</a>
+                <div class="presentacion__contenido">
+                    <div class="presentacion__texto">
+                        <h1 class="presentacion__saludo" id="titulo-presentacion">Bienvenido, mi nombre es</h1>
+                        <h2 class="presentacion__nombre">Alexis Sandoval</h2>
+                        <p class="presentacion__descripcion">Estudiante de Ciencias de Datos e IA | Desarrollador Web</p>
+                    </div>
+                    <div class="presentacion__acciones">
+                        <a href="#sobre-mi" class="presentacion__boton" role="button"><span>Sobre Mí</span></a>
+                        <a href="./assets/docs/CV.pdf" class="presentacion__boton presentacion__boton--cv" target="_blank" role="button" aria-label="Descargar currículum en PDF"><span>Descargar CV</span></a>
+                    </div>
                 </div>
+                <div class="presentacion__iconos-fondo">
+                    <img src="./assets/images/profile/foto1.png" alt="Icono 1">
+                    <img src="./assets/images/profile/foto2.png" alt="Icono 2">
+                    <img src="./assets/images/profile/foto3.png" alt="Icono 3">
+                    <img src="./assets/images/profile/foto4.png" alt="Icono 4">
+                    <img src="./assets/images/profile/foto5.png" alt="Icono 5">
+                    <img src="./assets/images/profile/foto6.png" alt="Icono 6">
+                    <img src="./assets/images/profile/foto7.png" alt="Icono 7">
+                </div>                
             </div>
         </section>
-        <article id="sobre-mi" class="sobre-mi" aria-labelledby="sobre-mi__titulo">
-            <h2 id="sobre-mi__titulo" class="sobre-mi__titulo">Sobre mi</h2>
+        <article id="acerca-de-mi" class="sobre-mi" aria-labelledby="acerca-de-mi__titulo">
+            <h3 class="sobre-mi__titulo2">Quien soy</h3>
+            <h2 id="sobre-mi__titulo" class="sobre-mi__titulo">Acerca de Mi</h2>
             <div class="sobre-mi__contenedor">
                 <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-1">
-                    <img src="" alt="Icono representando habilidades técnicas" class="seccion-perfil__imagen">
-                    <h3 id="seccion-perfil__titulo-1" class="seccion-perfil__titulo">Perfil Profesional</h3>
-                    <p class="seccion-perfil__descripcion">Soy Alexis, estudiante de Ciencias de Datos e Inteligencia Artificial. Me apasiona el análisis de datos y el proceso de transformar información en insights valiosos que ayuden a tomar decisiones más inteligentes. Disfruto aprender y crecer constantemente en el mundo de la tecnología.</p>
-                </section>
-                <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-2">
-                    <img src="" alt="Icono representando habilidades técnicas" class="seccion-perfil__imagen">
-                    <h3 id="seccion-perfil__titulo-2" class="seccion-perfil__titulo">Habilidades y conocimientos</h3>
-                    <p class="seccion-perfil__descripcion">Me formé en Data Analytics, con conocimientos sólidos en Python, SQL y herramientas como Power BI, Looker Studio y Excel. Trabajo con bibliotecas como Pandas y NumPy para analizar y procesar datos de forma eficiente, y tengo experiencia en la gestión de bases de datos.</p>
-                </section>
-                <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-3">
-                    <img src="" alt="Icono de desarrollo web" class="seccion-perfil__imagen">
-                    <h3 id="seccion-perfil__titulo-3" class="seccion-perfil__titulo">Aplicación Práctica</h3>
-                    <p class="seccion-perfil__descripcion">Además del análisis de datos, también tengo formación en desarrollo web con Python y Django, combinando mis habilidades técnicas con HTML, CSS y JavaScript para construir soluciones interactivas que integran datos y visualizaciones.</p>
-                    <p class="seccion-perfil__descripcion">En mi trayectoria laboral dentro del ámbito administrativo, implementé soluciones tecnológicas que ayudaron a optimizar tareas y mejorar la eficiencia. También tengo una base sólida en el uso de Excel, el paquete de Office y diversas herramientas de software orientadas a la gestión administrativa.</p>
-                </section>
-                <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-4">
-                    <img src="" alt="Icono de objetivos profesionales" class="seccion-perfil__imagen">
-                    <h3 id="seccion-perfil__titulo-4" class="seccion-perfil__titulo">Objetivo Profesional</h3>
-                    <p class="seccion-perfil__descripcion">Estoy en constante búsqueda de nuevos desafíos que me permitan seguir aprendiendo, crecer profesionalmente y aplicar mis conocimientos en proyectos que generen impacto. Me interesa formar parte de equipos donde pueda aportar valor, compartir ideas y seguir desarrollándome en el mundo de los datos y la tecnología.</p>
+                    <img src="./assets/images/profile/foto-de-perfil.png" alt="oto de perfil de Alexis Sandoval" class="seccion-perfil__imagen">
+                    <div class="seccion-perfil__contenido">
+                        <p class="seccion-perfil__presentacion">
+                            Soy estudiante de Ciencias de Datos e Inteligencia Artificial. Me apasiona analizar datos y transformarlos en insights que impulsen decisiones inteligentes. Disfruto aprender y crecer en el mundo de la tecnología.
+                        </p>
+                        <div class="seccion-perfil__formacion">
+                            <p>Además, me formé mediante cursos en Data Analytics y Desarrollo Web.</p>
+                            <p>Cuento con conocimiento en herramientas clave:</p>
+                        </div>
+                        <div class="seccion-perfil__tecnologias">
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/python.png" alt="Python" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Python</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/pandas.png" alt="Pandas" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Pandas</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/numpy.png" alt="NumPy" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">NumPy</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/sql.png" alt="SQL" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">SQL</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/powerbi.png" alt="Power BI" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Power BI</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/looker.png" alt="Looker Studio" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Looker Studio</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/excel.png" alt="Excel" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Excel</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/django.png" alt="Django" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">Django</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/html.png" alt="HTML5" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">HTML5</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/css.png" alt="CSS3" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">CSS</span>
+                            </div>
+                            <div class="tecnologia">
+                                <img src="./assets/images/logos/javascript.png" alt="JavaScript" class="tecnologia__icono">
+                                <span class="tecnologia__nombre">JavaScript</span>
+                            </div>
+                        </div>
+                        <p class="seccion-perfil__parrafo">
+                            En mi trayectoria en el ámbito administrativo, implementé soluciones tecnológicas que optimizaron tareas y mejoraron la eficiencia, gracias a mi base sólida en Excel, Office y diversos software.
+                        </p>
+                        <p class="seccion-perfil__parrafo">
+                            Estoy en búsqueda de desafíos que me permitan seguir aprendiendo y crecer profesionalmente en el mundo de los datos y la tecnología.
+                        </p>                        
+                    </div>
                 </section>
             </div>
         </article>
@@ -76,69 +135,119 @@
             <h2 class="proyectos__titulo" id="titulo-proyectos">Mis Proyectos</h2>
             <div class="proyectos__contenedor">
                 <section class="proyectos__item" role="region" aria-label="Proyecto 1">
-                    <img src="" alt="Captura del Proyecto 1" class="proyectos__imagen">
-                    <div class="proyectos__contenido">
-                        <h3 class="proyectos__nombre">Proyecto 1</h3>
-                        <p class="proyectos__descripcion">Descripción del proyecto 1</p>
+                    <div class="proyectos__tarjeta">
+                        <div class="proyectos__cara proyectos__cara--frontal">
+                            <h3 class="proyectos__nombre">Proyecto 1</h3>
+                            <img src="./assets/images/proyectos/proyecto-1.png" alt="Captura del Proyecto 1" class="proyectos__imagen">
+                        </div>
+                        <div class="proyectos__cara proyectos__cara--trasera">
+                            <p class="proyectos__descripcion">Descripción del proyecto 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eligendi earum aperiam reprehenderit iure temporibus tempora facilis itaque, accusamus vitae, esse nemo. Commodi dolorem doloribus iusto eius nemo velit praesentium esse accusamus harum sit perspiciatis corrupti consectetur delectus consequatur, quia fugit aliquid quidem nesciunt quam veniam excepturi sint fuga explicabo?</p>
+                        </div>
                     </div>
                 </section>
                 <section class="proyectos__item" role="region" aria-label="Proyecto 2">
-                    <img src="" alt="Captura del Proyecto 2" class="proyectos__imagen">
-                    <div class="proyectos__contenido">
-                        <h3 class="proyectos__nombre">Proyecto 2</h3>
-                        <p class="proyectos__descripcion">Descripción del proyecto 2</p>
+                    <div class="proyectos__tarjeta">
+                        <div class="proyectos__cara proyectos__cara--frontal">
+                            <h3 class="proyectos__nombre">Proyecto 2</h3>
+                            <img src="./assets/images/proyectos/proyecto-2.png" alt="Captura del Proyecto 2" class="proyectos__imagen">
+                        </div>
+                        <div class="proyectos__cara proyectos__cara--trasera">
+                            <p class="proyectos__descripcion">Descripción del proyecto 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint temporibus esse deleniti dignissimos magni obcaecati, laborum sed cum provident minima voluptates voluptatum, deserunt voluptas amet dolore fuga assumenda. Possimus libero ullam iste numquam odit, reiciendis deleniti doloribus atque, aliquam sit labore officia repellendus deserunt sed. Voluptatibus facilis molestiae voluptate!</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="proyectos__item" role="region" aria-label="Proyecto 3">
+                    <div class="proyectos__tarjeta">
+                        <div class="proyectos__cara proyectos__cara--frontal">
+                            <h3 class="proyectos__nombre">Proyecto 3</h3>
+                            <img src="./assets/images/proyectos/proyecto-3.png" alt="Captura del Proyecto 3" class="proyectos__imagen">
+                        </div>
+                        <div class="proyectos__cara proyectos__cara--trasera">
+                            <p class="proyectos__descripcion">Descripción del proyecto 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique modi architecto hic nulla alias id dolore perferendis blanditiis officiis ipsum itaque, deserunt culpa nostrum mollitia eveniet sunt provident suscipit porro debitis. Consequuntur corrupti explicabo reiciendis optio veniam doloremque facere magnam suscipit, commodi beatae necessitatibus ut fugit molestias. Sed, perferendis sunt?</p>
+                        </div>
                     </div>
                 </section>
             </div>
         </article>      
     </main>
     <footer class="pie-de-pagina" role="contentinfo" aria-label="Pie de página con redes, contacto y navegación">
-        <div class="pie-de-pagina__grupo">
-            <h4 class="pie-de-pagina__titulo">Mis Redes</h4>
-            <ul class="pie-de-pagina__lista">
-                <li class="pie-de-pagina__item">
-                    <a href="#" class="pie-de-pagina__enlace" aria-label="Perfil en red social 1"></a>
-                </li>
-                <li class="pie-de-pagina__item">
-                    <a href="#" class="pie-de-pagina__enlace" aria-label="Perfil en red social 2"></a>
-                </li>
-                <li class="pie-de-pagina__item">
-                    <a href="#" class="pie-de-pagina__enlace" aria-label="Perfil en red social 3"></a>
-                </li>
-                <li class="pie-de-pagina__item">
-                    <a href="#" class="pie-de-pagina__enlace" aria-label="Perfil en red social 4"></a>
-                </li>
-            </ul>
-        </div>
-        <div class="pie-de-pagina__grupo">
-            <h4 class="pie-de-pagina__titulo">Contáctame</h4>
-            <ul class="pie-de-pagina__lista">
-                <li class="pie-de-pagina__item">
-                    <a href="mailto:ejemplo@gmail.com" class="pie-de-pagina__enlace" aria-label="Enviar correo a ejemplo@gmail.com">
-                        Mail: ejemplo@gmail.com
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="pie-de-pagina__grupo">
-            <h4 class="pie-de-pagina__titulo">Secciones</h4>
-            <ul class="pie-de-pagina__lista">
-                <li class="pie-de-pagina__item">
-                  <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
-                </li>
-                <li class="pie-de-pagina__item">
-                  <a href="#sobre-mi" class="pie-de-pagina__enlace">Sobre mi</a
-                  >
-                </li>
-                <li class="pie-de-pagina__item">
-                  <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
-                  >
-                </li>
-            </ul>
+        <div class="pie-de-pagina__contenido">
+            <div class="pie-de-pagina__grupo">
+                <h4 class="pie-de-pagina__titulo">Mis Redes</h4>
+                <ul class="pie-de-pagina__lista">
+                    <li class="pie-de-pagina__item">
+                        <a href="https://github.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="GitHub">
+                            <img
+                            class="pie-de-pagina__icono"
+                            src="./assets/images/logos/icono-github.png"
+                            alt="logo de Github"
+                            title="Github"
+                            />
+                        </a>
+                    </li>
+                    <li class="pie-de-pagina__item">
+                        <a href="https://linkedin.com/in/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="LinkedIn">
+                            <img
+                            class="pie-de-pagina__icono"
+                            src="./assets/images/logos/icono-linkedin.png"
+                            alt="logo de LinkedIn"
+                            title="LinkedIn"
+                            />
+                        </a>
+                    </li>
+                    <li class="pie-de-pagina__item">
+                        <a href="https://instagram.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="Instagram">
+                            <img
+                            class="pie-de-pagina__icono"
+                            src="./assets/images/logos/icono-instagram.png"
+                            alt="logo de Instagram"
+                            title="Instagram"
+                            />
+                        </a>
+                    </li>
+                    <li class="pie-de-pagina__item">
+                        <a href="https://facebook.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="Facebook">
+                            <img
+                            class="pie-de-pagina__icono"
+                            src="./assets/images/logos/icono-facebook.png"
+                            alt="logo de Facebook"
+                            title="Facebook"
+                            />
+                        </a>
+                    </li>
+                </ul>              
+            </div>
+            <div class="pie-de-pagina__grupo">
+                <h4 class="pie-de-pagina__titulo">Contáctame</h4>
+                <ul class="pie-de-pagina__lista lista_vertical">
+                    <li class="pie-de-pagina__item">
+                        <a href="mailto:sandoval.alexis.emanuel@gmail.com" class="pie-de-pagina__enlace" aria-label="Enviar correo a ejemplo@gmail.com">
+                            Mail: sandoval.alexis.emanuel@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pie-de-pagina__grupo">
+                <h4 class="pie-de-pagina__titulo">Secciones</h4>
+                <ul class="pie-de-pagina__lista lista_vertical">
+                    <li class="pie-de-pagina__item">
+                      <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
+                    </li>
+                    <li class="pie-de-pagina__item">
+                      <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Sobre mi</a
+                      >
+                    </li>
+                    <li class="pie-de-pagina__item">
+                      <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
+                      >
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="pie-de-pagina__grupo pie-de-pagina__grupo-copyright">
-            <p class="pie-de-pagina__copyright">©️Copyright 2024</p>
+            <p class="pie-de-pagina__copyright">© Copyright 2025</p>
         </div>
     </footer>
+<script src="scripts.js"></script>
 </body>
 </html>
