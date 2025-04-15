@@ -114,6 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 });
 
+//Iconos en Presentación
 document.addEventListener("DOMContentLoaded", () => {
     const imagenes = document.querySelectorAll('.presentacion__iconos-fondo img');
     let indice = 0;
@@ -127,3 +128,30 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarSiguienteImagen();
     setInterval(mostrarSiguienteImagen, 5000);
 });
+
+// Modal
+const botones = document.querySelectorAll('.proyectos__boton');
+  const modal = document.getElementById('modalImagen');
+  const imagenModal = document.getElementById('imagenModal');
+  const cerrarModal = document.getElementById('cerrarModal');
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      const imgSrc = boton.getAttribute('data-img');
+      imagenModal.src = imgSrc;
+      modal.style.display = 'flex';
+    });
+  });
+
+  cerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    imagenModal.src = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      imagenModal.src = '';
+    }
+});
+

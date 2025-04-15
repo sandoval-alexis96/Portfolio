@@ -28,6 +28,9 @@
                         <a class="navegacion__menu-enlace" href="#acerca-de-mi">Acerca de mi</a>
                     </li>
                     <li class="navegacion__menu-item">
+                        <a class="navegacion__menu-enlace" href="#certificaciones">Certificaciones</a>
+                    </li>
+                    <li class="navegacion__menu-item">
                         <a class="navegacion__menu-enlace" href="#proyectos">Proyectos</a>
                     </li>
                 </ul>
@@ -66,7 +69,9 @@
             <h2 id="sobre-mi__titulo" class="sobre-mi__titulo">Acerca de Mi</h2>
             <div class="sobre-mi__contenedor">
                 <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-1">
-                    <img src="./assets/images/profile/foto-de-perfil.png" alt="oto de perfil de Alexis Sandoval" class="seccion-perfil__imagen">
+                    <div class="seccion-perfil__imagen-contenedor">
+                        <img src="./assets/images/profile/foto-de-perfil.png" alt="oto de perfil de Alexis Sandoval" class="seccion-perfil__imagen">
+                    </div>
                     <div class="seccion-perfil__contenido">
                         <p class="seccion-perfil__presentacion">
                             Soy estudiante de Ciencias de Datos e Inteligencia Artificial. Me apasiona analizar datos y transformarlos en insights que impulsen decisiones inteligentes. Disfruto aprender y crecer en el mundo de la tecnología.
@@ -131,6 +136,72 @@
                 </section>
             </div>
         </article>
+        <section class="certificaciones" id="certificaciones" aria-labelledby="certificaciones__titulo">
+            <h3 class="certificaciones__titulo2">Mi formación</h3>
+            <h2 class="certificaciones__titulo" id="certificaciones__titulo">Certificaciones Obtenidas</h2>
+            <div class="certificaciones__contenedor">
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-data-analytics.png" alt="Certificado Data Analytics" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Data Analytics</h4>
+                        <p class="certificacion__institucion">Informatorio (Gobierno del Chaco) - 2024</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-data-analytics.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-desarrollo-web.png" alt="Certificado Desarrollo Web" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Desarrollo Web (Programación Web con Python, Django y Base de Datos con Microsoft SQL Server)</h4>
+                        <p class="certificacion__institucion">Informatorio (Gobierno del Chaco) - 2023</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-desarrollo-web.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-diseño-web.png" alt="Certificado Diseño Web con HTML5 + CSS" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Diseño Web con HTML5 + CSS</h4>
+                        <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-diseño-web.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-javascript.png" alt="Certificado JavaScript" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Programación con JavaScript</h4>
+                        <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-javascript.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-seguridad-informacion.png" alt="Certificado Seguridad de la Información" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Introducción a la Seguridad de la Información</h4>
+                        <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-seguridad-informacion.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+                <div class="certificacion">
+                    <img src="./assets/docs/image-certificaciones/cert-programacion-avanzada.png" alt="Certificado Programación Avanzada" class="certificacion__imagen">
+                    <div class="certificacion__contenido">
+                        <h4 class="certificacion__nombre">Programación Avanzada</h4>
+                        <p class="certificacion__institucion">Gobierno del Chaco (Creando Capacidades Locales) - 2024</p>
+                    </div>
+                    <a href="./assets/docs/certificaciones/cert-programacion-avanzada.pdf" target="_blank">
+                        <button class="certificacion__boton">Ver</button>
+                    </a>
+                </div>
+            </div>
+        </section>                           
         <article class="proyectos" id="proyectos" aria-labelledby="titulo-proyectos">
             <h3 class="proyectos__titulo2">En qué he estado trabajando</h3>
             <h2 class="proyectos__titulo" id="titulo-proyectos">Mis Proyectos Académicos</h2>
@@ -145,6 +216,9 @@
                             <p class="proyectos__descripcion">Descripción del proyecto 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eligendi earum aperiam reprehenderit iure temporibus tempora facilis itaque, accusamus vitae, esse nemo. Commodi dolorem doloribus iusto eius nemo velit praesentium esse accusamus harum sit perspiciatis corrupti consectetur delectus consequatur, quia fugit aliquid quidem nesciunt quam veniam excepturi sint fuga explicabo?</p>
                         </div>
                     </div>
+                    <button class="proyectos__boton" data-img="./assets/images/proyectos/proyecto-1.png">
+                        Ver Proyecto
+                    </button>
                 </section>
                 <section class="proyectos__item" role="region" aria-label="Proyecto 2">
                     <h3 class="proyectos__nombre">Proyecto 2</h3>
@@ -156,6 +230,9 @@
                             <p class="proyectos__descripcion">Descripción del proyecto 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint temporibus esse deleniti dignissimos magni obcaecati, laborum sed cum provident minima voluptates voluptatum, deserunt voluptas amet dolore fuga assumenda. Possimus libero ullam iste numquam odit, reiciendis deleniti doloribus atque, aliquam sit labore officia repellendus deserunt sed. Voluptatibus facilis molestiae voluptate!</p>
                         </div>
                     </div>
+                    <button class="proyectos__boton" data-img="./assets/images/proyectos/proyecto-2.png">
+                        Ver Proyecto
+                    </button>
                 </section>
                 <section class="proyectos__item" role="region" aria-label="Proyecto 3">
                     <h3 class="proyectos__nombre">Proyecto 3</h3>
@@ -167,6 +244,9 @@
                             <p class="proyectos__descripcion">Descripción del proyecto 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique modi architecto hic nulla alias id dolore perferendis blanditiis officiis ipsum itaque, deserunt culpa nostrum mollitia eveniet sunt provident suscipit porro debitis. Consequuntur corrupti explicabo reiciendis optio veniam doloremque facere magnam suscipit, commodi beatae necessitatibus ut fugit molestias. Sed, perferendis sunt?</p>
                         </div>
                     </div>
+                    <button class="proyectos__boton" data-img="./assets/images/proyectos/proyecto-3.png">
+                        Ver Proyecto
+                    </button>
                 </section>
             </div>
         </article>      
@@ -232,15 +312,19 @@
                 <h4 class="pie-de-pagina__titulo">Secciones</h4>
                 <ul class="pie-de-pagina__lista lista_vertical">
                     <li class="pie-de-pagina__item">
-                      <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
+                        <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
                     </li>
                     <li class="pie-de-pagina__item">
-                      <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Sobre mi</a
-                      >
+                        <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Acerca de Mi</a
+                        >
                     </li>
                     <li class="pie-de-pagina__item">
-                      <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
-                      >
+                        <a href="#certificaciones" class="pie-de-pagina__enlace">Certificaciones</a
+                        >
+                    </li>
+                    <li class="pie-de-pagina__item">
+                        <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -249,6 +333,10 @@
             <p class="pie-de-pagina__copyright">© Copyright 2025</p>
         </div>
     </footer>
+    <div class="modal-imagen" id="modalImagen">
+        <span class="modal-cerrar" id="cerrarModal">&times;</span>
+        <img id="imagenModal" src="" alt="Imagen ampliada del proyecto">
+    </div>
 <script src="scripts.js"></script>
 </body>
 </html>
