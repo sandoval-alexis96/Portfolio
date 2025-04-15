@@ -328,7 +328,7 @@ body {
 /* Sección Sobre Mi */
 .sobre-mi {
     width: 100%;
-    padding: 2rem 8rem;
+    padding: 1rem 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -484,7 +484,7 @@ body {
 /*¨Certificaciones */
 .certificaciones {
     width: 100%;
-    padding: 2rem 8rem;
+    padding: 1rem 8rem;
 }
 
 .certificaciones__titulo {
@@ -579,7 +579,7 @@ body {
 /* Proyectos*/
 .proyectos {
     width: 100%;
-    padding: 2rem 8rem;
+    padding: 1rem 8rem;
 }
 
 .proyectos__titulo {
@@ -707,7 +707,10 @@ body {
     width: 100%;
     min-height: 300px;
     border-top: 1px solid #ffffff;
-    background-color: #1e1e1e;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding-top: 3rem;
 }
 
@@ -716,6 +719,7 @@ body {
     justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .pie-de-pagina__grupo {
@@ -736,8 +740,22 @@ body {
     justify-content: space-evenly;
 }
 
-.lista_vertical {
+.pie-de-pagina__grupo-inferior {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 20px;
+}
+
+.pie-de-pagina__lista_inferior {
+    width: 68%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding-top: 15px;
+    border-top: 1px solid #dddddd;
 }
 
 .pie-de-pagina__item {
@@ -762,12 +780,10 @@ body {
 
 .pie-de-pagina__grupo-copyright {
     width: 100%;
-    height: 50px;
     color: #dddddd;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    margin-top: auto;
 }
 
 /* Modal */
@@ -849,13 +865,12 @@ body {
 
     /* Sección Acerca de Mi */
     .sobre-mi__titulo {
-        font-size: 2rem;
+        font-size: 1.4rem;
         padding-bottom: 15px;
     }
     
     .sobre-mi__titulo2 {
-        font-size: 1.3rem;
-        margin-left: 10px;
+        font-size: 1.1rem;
     }
     
     .sobre-mi__titulo2::after {
@@ -883,15 +898,52 @@ body {
         font-size: 12px;
     }
 
+    /*¨Certificaciones */
+
+    .certificaciones__titulo {
+        font-size: 1.4rem;
+        padding-bottom: 15px;
+    }
+
+    .certificaciones__titulo2 {
+        font-size: 1.1rem;
+    }
+
+    .certificaciones__contenedor {
+        padding-top: 20px;
+    }
+
+    .certificacion {
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .certificacion__imagen {
+        width: 110px;
+    }
+
+    .certificacion__nombre {
+        font-size: 0.8rem;
+    }
+
+    .certificacion__institucion {
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .certificacion__boton {
+        padding: 6px 25px;
+        font-size: 0.7rem;
+    }
+
     /* Sección Proyectos */
     .proyectos__titulo {
-        font-size: 2rem;
+        font-size: 1.4rem;
         padding-bottom: 15px;
     }
     
     .proyectos__titulo2 {
-        font-size: 1.3rem;
-        margin-left: 10px;
+        font-size: 1.1rem;
     }
     
     .proyectos__titulo2::after {
@@ -906,15 +958,19 @@ body {
     }
 
     .proyectos__item {
-        max-width: 410px;
+        max-width: 280px;
         margin-top: 20px;
     }
 
     .proyectos__nombre {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .proyectos__descripcion {
         font-size: 0.9rem;
+    }
+
+    .proyectos__boton {
+        font-size: 0.7rem;
     }
 }
