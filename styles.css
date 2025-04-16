@@ -750,7 +750,7 @@ body {
 }
 
 .pie-de-pagina__lista_inferior {
-    width: 68%;
+    width: 64%;
     display: flex;
     justify-content: center;
     gap: 3rem;
