@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/images/logos/logo-navegacion.png" type="image/x-icon" />
 </head>
@@ -253,48 +254,30 @@
     </main>
     <footer class="pie-de-pagina" role="contentinfo" aria-label="Pie de página con redes, contacto y navegación">
         <div class="pie-de-pagina__contenido">
+            <div class="pie-de-pagina__grupo pie-de-pagina__grupo-identidad">
+                <img class="pie-de-pagina__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo de Alexis">
+                <div class="pie-de-pagina__titulo-frase">
+                    <h1 class="titulo-frase__titulo-nombre">Alexis Sandoval</h1>
+                    <p class="titulo-frase__descripcion">Porque un dato aislado no dice nada, pero transformado en información útil lo dice todo.</p>
+                </div>
+            </div>
             <div class="pie-de-pagina__grupo">
                 <h4 class="pie-de-pagina__titulo">Mis Redes</h4>
                 <ul class="pie-de-pagina__lista">
                     <li class="pie-de-pagina__item">
-                        <a href="https://github.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="GitHub">
-                            <img
-                            class="pie-de-pagina__icono"
-                            src="./assets/images/logos/icono-github.png"
-                            alt="logo de Github"
-                            title="Github"
-                            />
-                        </a>
+                        <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="https://linkedin.com/in/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="LinkedIn">
-                            <img
-                            class="pie-de-pagina__icono"
-                            src="./assets/images/logos/icono-linkedin.png"
-                            alt="logo de LinkedIn"
-                            title="LinkedIn"
-                            />
-                        </a>
+                        <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Acerca de Mi</a
+                        >
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="https://instagram.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="Instagram">
-                            <img
-                            class="pie-de-pagina__icono"
-                            src="./assets/images/logos/icono-instagram.png"
-                            alt="logo de Instagram"
-                            title="Instagram"
-                            />
-                        </a>
+                        <a href="#certificaciones" class="pie-de-pagina__enlace">Certificaciones</a
+                        >
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="https://facebook.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="Facebook">
-                            <img
-                            class="pie-de-pagina__icono"
-                            src="./assets/images/logos/icono-facebook.png"
-                            alt="logo de Facebook"
-                            title="Facebook"
-                            />
-                        </a>
+                        <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
+                        >
                     </li>
                 </ul>              
             </div>
@@ -306,30 +289,33 @@
                             Mail: sandoval.alexis.emanuel@gmail.com
                         </a>
                     </li>
+                    <li class="pie-de-pagina__item">
+                        <a href="https://wa.me/5493644674907" target="_blank" class="pie-de-pagina__enlace" aria-label="Enviar mensaje por WhatsApp">
+                            WhatsApp: +5493644674907
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="pie-de-pagina__grupo-inferior">
             <ul class="pie-de-pagina__lista_inferior">
                 <li class="pie-de-pagina__item">
-                    <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
+                    <a href="https://github.com/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="GitHub">
+                        <i class="fab fa-github fa-xl"></i>
+                    </a>
                 </li>
                 <li class="pie-de-pagina__item">
-                    <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Acerca de Mi</a
-                    >
-                </li>
-                <li class="pie-de-pagina__item">
-                    <a href="#certificaciones" class="pie-de-pagina__enlace">Certificaciones</a
-                    >
-                </li>
-                <li class="pie-de-pagina__item">
-                    <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
-                    >
+                    <a href="https://linkedin.com/in/tuusuario" class="pie-de-pagina__enlace enlace-icono" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-xl"></i>
+                    </a>
                 </li>
             </ul>
         </div>
+        <div class="pie-de-pagina__grupo pie-de-pagina__grupo-fecha">
+            <p id="fecha-hora-actual" class="pie-de-pagina__fecha-hora"></p>
+        </div>
         <div class="pie-de-pagina__grupo pie-de-pagina__grupo-copyright">
-            <p class="pie-de-pagina__copyright">© Copyright 2025</p>
+            <p class="pie-de-pagina__copyright" id="copyright"></p>
         </div>
     </footer>
     <div class="modal-imagen" id="modalImagen">
