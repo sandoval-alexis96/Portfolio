@@ -155,3 +155,25 @@ const botones = document.querySelectorAll('.proyectos__boton');
     }
 });
 
+// Mostrar fecha y hora actual sin la sigla "ART"
+function actualizarFechaHora() {
+  const fechaElemento = document.getElementById("fecha-hora-actual");
+  const ahora = new Date();
+  const opciones = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+      // Quitamos timeZoneName para que no aparezca "ART"
+  };
+  const formato = new Intl.DateTimeFormat("es-AR", opciones).format(ahora);
+  fechaElemento.textContent = formato;
+}
+actualizarFechaHora();
+setInterval(actualizarFechaHora, 1000);
+
+const anio = new Date().getFullYear();
+document.getElementById("copyright").innerHTML = `&copy; ${anio} Alexis Sandoval. Todos los derechos reservados.`;
