@@ -1061,7 +1061,7 @@ body {
     .presentacion__contenedor {
         flex-direction: column;
         gap: 2rem;
-        padding: 260px 1rem 2rem 1rem;
+        padding: 180px 1rem 2rem 1rem;
         text-align: center;
     }
   
