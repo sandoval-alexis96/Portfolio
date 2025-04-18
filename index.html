@@ -16,11 +16,12 @@
         <nav class="navegacion">
             <div class="navegacion__contenedor-izquierdo">
                 <a class="navegacion__logo" href="#presentacion">
-                    <img class="navegacion__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo de Alexis">
+                    <img class="navegacion__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo del portfolio de Alexis">
                     <h2 class="navegacion__titulo">Portfolio</h2>
                 </a>
               </div>
             <div class="navegacion__contenedor-derecho">
+                <button class="navegacion__hamburguesa" id="menu-toggle">☰</button>
                 <ul class="navegacion__menu">
                     <li class="navegacion__menu-item">
                         <a class="navegacion__menu-enlace" href="#presentacion">Inicio</a>
@@ -35,7 +36,7 @@
                         <a class="navegacion__menu-enlace" href="#proyectos">Proyectos</a>
                     </li>
                 </ul>
-                <button class="navegacion__tema" aria-label="Cambiar tema">🌓</button>
+                <!-- <button class="navegacion__tema" aria-label="Cambiar tema">🌓</button> -->
             </div>
         </nav>
     </header>
@@ -50,7 +51,7 @@
                         <p class="presentacion__descripcion">Estudiante de Ciencias de Datos e IA | Desarrollador Web</p>
                     </div>
                     <div class="presentacion__acciones">
-                        <a href="#sobre-mi" class="presentacion__boton" role="button"><span>Sobre Mí</span></a>
+                        <a href="#acerca-de-mi" class="presentacion__boton" role="button" aria-label="Ir a la sección Sobre Mí"><span>Sobre Mí</span></a>
                         <a href="./assets/docs/CV.pdf" class="presentacion__boton presentacion__boton--cv" target="_blank" role="button" aria-label="Descargar currículum en PDF"><span>Descargar CV</span></a>
                     </div>
                 </div>
@@ -71,7 +72,7 @@
             <div class="sobre-mi__contenedor">
                 <section class="seccion-perfil" aria-labelledby="seccion-perfil__titulo-1">
                     <div class="seccion-perfil__imagen-contenedor">
-                        <img src="./assets/images/profile/foto-de-perfil.png" alt="oto de perfil de Alexis Sandoval" class="seccion-perfil__imagen">
+                        <img src="./assets/images/profile/foto-de-perfil.png" alt="Foto de perfil de Alexis Sandoval" class="seccion-perfil__imagen">
                     </div>
                     <div class="seccion-perfil__contenido">
                         <p class="seccion-perfil__presentacion">
@@ -147,9 +148,7 @@
                         <h4 class="certificacion__nombre">Data Analytics</h4>
                         <p class="certificacion__institucion">Informatorio (Gobierno del Chaco) - 2024</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-data-analytics.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-data-analytics.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
                 <div class="certificacion">
                     <img src="./assets/docs/image-certificaciones/cert-desarrollo-web.png" alt="Certificado Desarrollo Web" class="certificacion__imagen">
@@ -157,9 +156,7 @@
                         <h4 class="certificacion__nombre">Desarrollo Web (Programación Web con Python, Django y Base de Datos con Microsoft SQL Server)</h4>
                         <p class="certificacion__institucion">Informatorio (Gobierno del Chaco) - 2023</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-desarrollo-web.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-desarrollo-web.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
                 <div class="certificacion">
                     <img src="./assets/docs/image-certificaciones/cert-diseño-web.png" alt="Certificado Diseño Web con HTML5 + CSS" class="certificacion__imagen">
@@ -167,9 +164,7 @@
                         <h4 class="certificacion__nombre">Diseño Web con HTML5 + CSS</h4>
                         <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-diseño-web.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-diseño-web.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
                 <div class="certificacion">
                     <img src="./assets/docs/image-certificaciones/cert-javascript.png" alt="Certificado JavaScript" class="certificacion__imagen">
@@ -177,9 +172,7 @@
                         <h4 class="certificacion__nombre">Programación con JavaScript</h4>
                         <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-javascript.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-javascript.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
                 <div class="certificacion">
                     <img src="./assets/docs/image-certificaciones/cert-seguridad-informacion.png" alt="Certificado Seguridad de la Información" class="certificacion__imagen">
@@ -187,9 +180,7 @@
                         <h4 class="certificacion__nombre">Introducción a la Seguridad de la Información</h4>
                         <p class="certificacion__institucion">Conecta Empleo (Programa de Formación Digital) - 2024</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-seguridad-informacion.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-seguridad-informacion.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
                 <div class="certificacion">
                     <img src="./assets/docs/image-certificaciones/cert-programacion-avanzada.png" alt="Certificado Programación Avanzada" class="certificacion__imagen">
@@ -197,9 +188,7 @@
                         <h4 class="certificacion__nombre">Programación Avanzada</h4>
                         <p class="certificacion__institucion">Gobierno del Chaco (Creando Capacidades Locales) - 2024</p>
                     </div>
-                    <a href="./assets/docs/certificaciones/cert-programacion-avanzada.pdf" target="_blank">
-                        <button class="certificacion__boton">Ver</button>
-                    </a>
+                    <a href="./assets/docs/certificaciones/cert-programacion-avanzada.pdf" target="_blank" class="certificacion__boton">Ver</a>
                 </div>
             </div>
         </section>                           
@@ -250,7 +239,7 @@
                     </button>
                 </section>
             </div>
-        </article>      
+        </article>
     </main>
     <footer class="pie-de-pagina" role="contentinfo" aria-label="Pie de página con redes, contacto y navegación">
         <div class="pie-de-pagina__contenido">
@@ -258,26 +247,23 @@
                 <img class="pie-de-pagina__logo-imagen" src="./assets/images/logos/logo-navegacion.png" alt="Logo de Alexis">
                 <div class="pie-de-pagina__titulo-frase">
                     <h1 class="titulo-frase__titulo-nombre">Alexis Sandoval</h1>
-                    <p class="titulo-frase__descripcion">Porque un dato aislado no dice nada, pero transformado en información útil lo dice todo.</p>
+                    <p class="titulo-frase__descripcion">"Porque un dato aislado no dice nada, pero transformado en información útil lo dice todo."</p>
                 </div>
             </div>
             <div class="pie-de-pagina__grupo">
                 <h4 class="pie-de-pagina__titulo">Mis Redes</h4>
-                <ul class="pie-de-pagina__lista">
+                <ul class="pie-de-pagina__lista pie-de-pagina__lista-horizontal-responsive">
                     <li class="pie-de-pagina__item">
                         <a href="#presentacion" class="pie-de-pagina__enlace">Inicio</a>
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Acerca de Mi</a
-                        >
+                        <a href="#acerca-de-mi" class="pie-de-pagina__enlace">Acerca de Mi</a>
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="#certificaciones" class="pie-de-pagina__enlace">Certificaciones</a
-                        >
+                        <a href="#certificaciones" class="pie-de-pagina__enlace">Certificaciones</a>
                     </li>
                     <li class="pie-de-pagina__item">
-                        <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a
-                        >
+                        <a href="#proyectos" class="pie-de-pagina__enlace">Proyectos</a>
                     </li>
                 </ul>              
             </div>
