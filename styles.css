@@ -1140,6 +1140,7 @@ body {
         width: 100%;
         max-width: 300px;
         border-radius: 1rem;
+        filter: drop-shadow(0px -5px 5px #000000);
     }
   
     .seccion-perfil__contenido {
@@ -1148,7 +1149,7 @@ body {
     }
   
     .seccion-perfil__tecnologias {
-        padding: 0.5rem;
+        padding: 0.1rem;
         gap: 1rem;
     }
   
