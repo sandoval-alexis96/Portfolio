@@ -343,7 +343,7 @@ body {
 }
 
 .seccion-perfil__imagen-contenedor {
-    width: 100%;
+    width: 130%;
     height: 100%;
 }
 
@@ -770,7 +770,7 @@ body {
 .pie-de-pagina__enlace {
     text-decoration: none;
     color: var(--texto-color-primario);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .pie-de-pagina__enlace:hover {
@@ -1319,6 +1319,7 @@ body {
 
     .pie-de-pagina__enlace {
         font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .pie-de-pagina__lista_inferior {

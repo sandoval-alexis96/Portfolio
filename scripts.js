@@ -26,7 +26,7 @@ function inicializarCanvasAnimado() {
     resizeCanvas();
   
     // Ajustamos el número de partículas según el tamaño de la pantalla
-    const particleCount = window.innerWidth <= 768 ? 100 : 300;  // 100 partículas en móviles, 200 en pantallas grandes
+    const particleCount = window.innerWidth <= 768 ? 50 : Math.max(100, Math.min(300, window.innerWidth / 4));
   
     function createParticles() {
         particles = [];
