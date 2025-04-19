@@ -24,24 +24,23 @@ function inicializarCanvasAnimado() {
   
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
-  
-    // Ajustamos el número de partículas según el tamaño de la pantalla
+
     const particleCount = window.innerWidth <= 768 ? 50 : Math.max(100, Math.min(300, window.innerWidth / 4));
   
     function createParticles() {
         particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push({
-                // Posición aleatoria de las partículas en el lienzo
+
                 x: Math.random() * width,
                 y: Math.random() * height,
-                // Velocidades aleatorias para cada partícula
+
                 vx: (Math.random() - 0.5) * 0.5,
                 vy: (Math.random() - 0.5) * 0.5,
-                // Tamaño de las partículas ajustado según el tamaño de la pantalla
-                radius: Math.random() * (window.innerWidth <= 768 ? 1.2 : 1.9) + 1,  // Ajustamos el tamaño en móviles
+
+                radius: Math.random() * (window.innerWidth <= 768 ? 1.2 : 1.9) + 1,
                 pulse: Math.random() * Math.PI * 2,
-                redLightPosition: 0 // Posición de las luces rojas (inicialmente en 0)
+                redLightPosition: 0 
             });
         }
     }
@@ -71,14 +70,14 @@ function inicializarCanvasAnimado() {
                 if (dist < maxDistance) {
                     const opacity = 1 - dist / maxDistance;
   
-                    ctx.strokeStyle = `rgba(0,200,255,${opacity * 0.6})`;  // Línea azul entre partículas cercanas
+                    ctx.strokeStyle = `rgba(0,200,255,${opacity * 0.6})`;
                     ctx.lineWidth = 0.8;
                     ctx.beginPath();
                     ctx.moveTo(p1.x, p1.y);
                     ctx.lineTo(p2.x, p2.y);
                     ctx.stroke();
   
-                    ctx.strokeStyle = `rgba(255,0,0,0.9)`;  // Línea roja entre partículas cercanas
+                    ctx.strokeStyle = `rgba(255,0,0,0.9)`;
                     ctx.lineWidth = 2;
   
                     const redLightPosition = p1.redLightPosition;
@@ -93,7 +92,6 @@ function inicializarCanvasAnimado() {
                     ctx.lineTo(x2, y2);
                     ctx.stroke();
   
-                    // Incremento de la posición de la luz roja, reiniciando al llegar a 1
                     p1.redLightPosition += 0.01;
                     if (p1.redLightPosition >= 1) p1.redLightPosition = 0;
                 }
@@ -102,20 +100,16 @@ function inicializarCanvasAnimado() {
             p1.pulse += 0.05;
             const pulseRadius = p1.radius + Math.sin(p1.pulse) * 0.4;
   
-            // Partículas azules
             ctx.fillStyle = "rgba(0,200,255,0.9)";
             ctx.beginPath();
             ctx.arc(p1.x, p1.y, pulseRadius, 0, Math.PI * 2);
             ctx.fill();
   
-            // Resplandor azul alrededor de las partículas
             drawGlow(p1.x, p1.y, pulseRadius, "rgba(0,150,255,0.6)");
   
-            // Actualización de la posición de las partículas
             p1.x += p1.vx;
             p1.y += p1.vy;
   
-            // Rebote de las partículas en los bordes
             if (p1.x <= 0 || p1.x >= width) p1.vx *= -1;
             if (p1.y <= 0 || p1.y >= height) p1.vy *= -1;
         }
@@ -208,7 +202,7 @@ function mostrarCopyright() {
   document.getElementById("copyright").innerHTML = `&copy; ${anio} Alexis Sandoval. Todos los derechos reservados.`;
 }
 
-// Configuración del menú (Nueva función agregada)
+// Configuración del menú
 function configurarMenu() {
     const toggle = document.getElementById('menu-toggle');
     const menu = document.querySelector('.navegacion__menu');
