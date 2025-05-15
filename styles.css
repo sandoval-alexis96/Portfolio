@@ -10,7 +10,7 @@
     --tamanio-titulo-seccion: 1.7rem;
     --tamanio-subtitulo-seccion: 1.3rem;
 
-    --padding-principal: 1rem 12rem;
+    --padding-principal: 1rem 10rem;
 
 }
 
@@ -21,6 +21,8 @@
     margin: 0;
     scroll-behavior: smooth;
     font-family: "Roboto", sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #525252 #000000;
 }
 
 html {
@@ -67,13 +69,13 @@ body {
 }
 
 .navegacion__logo-imagen {
-    height: 50px;
+    height: 30px;
     width: auto;
     object-fit: contain;
 }
   
 .navegacion__titulo {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--texto-color-primario);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -116,7 +118,7 @@ body {
     text-decoration: none;
     color: var(--texto-color-primario);
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.125rem;
     display: inline-block;
     padding-bottom: 6px;
     transition: color 0.3s ease;
@@ -152,11 +154,13 @@ body {
 
 .presentacion {
     width: 100%;
+    height: 100vh;
 }
 
 .presentacion__contenedor {
     width: 100%;
     height: 100%;
+    min-height: auto;
     padding-top: 80px;
     display: flex;
     justify-content: space-around;
@@ -164,6 +168,11 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: 1;
+}
+
+.presentacion__contenido {
+    width: auto;
+    height: auto;
 }
 
 .presentacion__texto {
@@ -175,13 +184,12 @@ body {
     color: var(--texto-color-secundario);
     font-size: 1.7rem;
     font-weight: 500;
-    
 }
 
 .presentacion__nombre {
     font-size: 5rem;
+    font-size: clamp(4.375rem, 4.16vw, 5rem);
     font-weight: 700;
-    
 }
 
 .presentacion__descripcion {
@@ -210,7 +218,7 @@ body {
     overflow: hidden;
     border-radius: 30px;
     color: var(--texto-color-primario);
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 800;
     text-decoration: none;
     transition: all 0.5s ease-in-out;
@@ -294,6 +302,8 @@ body {
 /* Sección Sobre Mi */
 .sobre-mi {
     width: 100%;
+    min-height: 100vh;
+    height: auto;  
     padding: var(--padding-principal);
     display: flex;
     flex-direction: column;
@@ -329,22 +339,21 @@ body {
     vertical-align: middle;
 }
 
-.sobre-mi__contenedor {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 30px;
-}
-
 .seccion-perfil {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
+    width: 100%;
+    height: auto;
 }
 
 .seccion-perfil__imagen-contenedor {
-    width: 130%;
+    width: 50%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .seccion-perfil__imagen {
@@ -357,13 +366,18 @@ body {
 }
 
 .seccion-perfil__contenido {
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
+    justify-content: center;
+    align-self: center;
     text-align: center;
     gap: 0.5rem;
-    padding: 20px 60px;
-    font-size: 24px;
+    padding: 20px 20px;
+    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 2vw, 1.25rem);
+    overflow-y: auto;
 }
 
 .seccion-perfil__presentacion,
@@ -377,7 +391,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1.3rem;
-    padding: 10px 120px;
+    padding: 10px 50px;
 }
 
 .tecnologia {
@@ -386,61 +400,9 @@ body {
     align-items: center;
 }
 
-.tecnologia__icono {
-    width: 40px;
-    height: 40px;
-}
-
-.tecnologia:nth-child(1) .tecnologia__icono {
-    width: 25px;
-    height: 30px;
-}
-  
-.tecnologia:nth-child(2) .tecnologia__icono {
-    width: 30px;
-    height: 33px;
-}
-  
-.tecnologia:nth-child(3) .tecnologia__icono {
-    width: 30px;
-    height: 35px;
-}
-
-.tecnologia:nth-child(4) .tecnologia__icono {
-    width: 30px;
-}
-  
-.tecnologia:nth-child(5) .tecnologia__icono {
-    width: 30px;
-}
-  
-.tecnologia:nth-child(6) .tecnologia__icono {
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-}
-
-.tecnologia:nth-child(7) .tecnologia__icono {
-    height: 30px;
-    margin-top: 10px;
-}
-
-.tecnologia:nth-child(8) .tecnologia__icono {
-    height: 30px;
-    margin-top: 10px;
-}
-
-.tecnologia:nth-child(9) .tecnologia__icono,
-.tecnologia:nth-child(10) .tecnologia__icono,
-.tecnologia:nth-child(11) .tecnologia__icono {
-    width: 30px;
-    height: 30px;
-    margin-top: 14px;
-}
-
 .tecnologia__nombre {
     color: var(--texto-color-secundario);
-    font-size: 16px;
+    font-size: 0.875rem;
 }
 
 .seccion-perfil__parrafo {
@@ -450,7 +412,9 @@ body {
 /*¨Certificaciones */
 .certificaciones {
     width: 100%;
+    height: 100vh;
     padding: var(--padding-principal);
+    flex-wrap: wrap;
 }
 
 .certificaciones__titulo {
@@ -482,13 +446,20 @@ body {
 }
 
 .certificaciones__contenedor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding-top: 30px;
+    flex-wrap: wrap;
 }
 
 .certificacion {
+    width: 45%;
+    height: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -498,6 +469,7 @@ body {
     background: var(--color-primario-gradiente);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow-y: auto;
 }
 
 .certificacion:hover {
@@ -506,7 +478,7 @@ body {
 }
 
 .certificacion__imagen {
-    width: 130px;
+    width: 30%;
     border-radius: 10px;
 }
 
@@ -517,7 +489,7 @@ body {
 }
 
 .certificacion__nombre {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--texto-color-primario);
 }
@@ -549,6 +521,7 @@ body {
 /* Proyectos*/
 .proyectos {
     width: 100%;
+    height: auto;
     padding: var(--padding-principal);
 }
 
@@ -581,6 +554,8 @@ body {
 }
 
 .proyectos__contenedor {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -590,7 +565,7 @@ body {
 }
 
 .proyectos__item {
-    width: 100%;
+    width: 30%;
     max-width: 480px;
     aspect-ratio: 3 / 2;
     perspective: 1000px;
@@ -598,7 +573,6 @@ body {
 
 .proyectos__tarjeta-wrapper {
     width: 100%;
-    height: 84%;
     aspect-ratio: 3 / 2;
     perspective: 1000px;
 }
@@ -666,7 +640,7 @@ body {
 }
 
 .proyectos__nombre {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--texto-color-primario);
     text-align: start;
@@ -841,52 +815,51 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 1366px) {
+@media (max-width: 1599px) {
 
     :root {
-
         --tamanio-titulo-seccion: 1.3rem;
         --tamanio-subtitulo-seccion: 1rem;
       
-        --padding-principal: 1rem 8rem;
+        --padding-principal: 1rem 6rem;
     }
 
     /* Barra de navegación */
     .navegacion__menu-enlace {
         font-weight: 400;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
     .navegacion__logo-imagen {
-        height: 35px;
+        height: 25px;
     }
       
     .navegacion__titulo {
-        font-size: 1.8rem;
+        font-size: 1.25rem;
         font-weight: 600;
     }
+
     /* Presentación */
     .presentacion__saludo {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 200;
         
     }
     
     .presentacion__nombre {
-        font-size: 4rem;
+        font-size: 3.9rem;
         
     }
     
     .presentacion__descripcion {
         max-width: 600px;
-        font-size: 1.6rem;
-        
+        font-size: 1.4rem;
     }
 
     .presentacion__boton {
         height: 50px;
         width: 150px;
-        font-size: 17px;
+        font-size: 0.75rem;
         font-weight: 600;
         margin-top: 30px;
     }
@@ -919,20 +892,19 @@ body {
     .seccion-perfil__contenido {
         gap: 0.4rem;
         padding: 20px 20px;
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .seccion-perfil__tecnologias {
-        padding: 10px 80px;
+        padding: 10px 40px;
     }
 
     .tecnologia__nombre {
         color: #dddddd;
-        font-size: 12px;
+        font-size: 0.75rem;
     }
 
     /*¨Certificaciones */
-
     .certificaciones__titulo {
         font-size: var(--tamanio-titulo-seccion);
         padding-bottom: 15px;
@@ -991,12 +963,11 @@ body {
     }
 
     .proyectos__item {
-        max-width: 330px;
         margin-top: 20px;
     }
 
     .proyectos__nombre {
-        font-size: 1.1rem;
+        font-size: 0.75rem;
     }
 
     .proyectos__descripcion {
@@ -1005,16 +976,46 @@ body {
     }
 
     .proyectos__boton {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
+
+    /* Pie de página */
+    .pie-de-pagina__logo-imagen {
+        width: 70px;
+    }
+
+    .titulo-frase__titulo-nombre {
+        font-size: 1.8rem;
+    }
+
+    .titulo-frase__descripcion {
+        font-size: 1rem;
+    }
+
+    .pie-de-pagina__titulo {
+        font-size: 0.875rem;
+    }
+
+    .pie-de-pagina__enlace {
+        font-size: 0.75rem;
+    }
+
+    .pie-de-pagina__grupo-copyright {
+        font-size: 0.875rem;
+    }
+
+    .pie-de-pagina__fecha-hora {
+        font-size: 0.875rem;
+    }
+
 }
 
 @media screen and (max-width: 430px) and (max-height: 932px) {
 
     :root {
-      --tamanio-titulo-seccion: 1.8rem;
-      --tamanio-subtitulo-seccion: 1.5rem;
-      --padding-principal: 1rem 1rem;
+      --tamanio-titulo-seccion: 1.4rem;
+      --tamanio-subtitulo-seccion: 1.2rem;
+      --padding-principal: 1rem 0;
     }
 
     html, body {
@@ -1062,7 +1063,7 @@ body {
     }
   
     .navegacion__menu-enlace {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
 
     .navegacion__menu-item::after {
@@ -1100,7 +1101,7 @@ body {
     .presentacion__boton {
         width: 150px;
         height: 45px;
-        font-size: 16px;
+        font-size: 0.75rem;
     }
   
     .presentacion__iconos-fondo {
@@ -1121,11 +1122,6 @@ body {
     .sobre-mi__titulo2 {
         font-size: var(--tamanio-subtitulo-seccion);
     }
-
-    .sobre-mi__contenedor {
-        padding-top: 20px;
-        gap: 2rem;
-    }
   
     .seccion-perfil {
         flex-direction: column;
@@ -1134,6 +1130,7 @@ body {
     }
 
     .seccion-perfil__imagen-contenedor {
+        width: 100%;
         display: flex;
         justify-content: center;
     }
@@ -1146,8 +1143,9 @@ body {
     }
   
     .seccion-perfil__contenido {
-        padding: 0 1rem;
-        font-size: 1.2rem;
+        width: 100%;
+        padding: 0 10px;
+        font-size: 1rem;
     }
   
     .seccion-perfil__tecnologias {
@@ -1160,6 +1158,11 @@ body {
     }
   
     /* Certificaciones */
+    .certificaciones {
+        height: auto;
+        padding: var(--padding-principal);
+    }
+
     .certificaciones__titulo {
         font-size: var(--tamanio-titulo-seccion);
     }
@@ -1169,11 +1172,11 @@ body {
     }
 
     .certificaciones__contenedor {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
         gap: 1rem;
-        padding-top: 20px;
+        padding-top: 30px;
     }
 
     .certificacion {
@@ -1181,12 +1184,12 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 70%;
+        width: 90%;
     }
   
     .certificacion__imagen {
-        width: 100%;
-        max-width: 250px;
+        width: 90%;
+        max-width: 200px;
     }
 
     .certificacion__contenido {
@@ -1195,19 +1198,19 @@ body {
     }
   
     .certificacion__nombre {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
     }
 
     .certificacion__institucion {
-        font-size: 1.1rem;
+        font-size: 0.875rem;
         text-align: center;
     }
   
     .certificacion__boton {
         margin: 10px auto 5px auto;
         padding: 8px 50px;
-        font-size: 1.1rem;
+        font-size: 0.875rem;
     }
   
     /* Proyectos */
@@ -1217,6 +1220,10 @@ body {
 
     .proyectos__titulo2 {
         font-size: var(--tamanio-subtitulo-seccion);
+    }
+
+    .proyectos__contenedor {
+        width: 90%;
     }
 
     .proyectos__item {
@@ -1269,11 +1276,11 @@ body {
     }
 
     .proyectos__nombre {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .proyectos__descripcion {
-        font-size: 1.1rem;
+        font-size: 1rem;
         text-overflow: unset;
         max-height: 180px;
         overflow-y: auto;
@@ -1305,33 +1312,32 @@ body {
     }
 
     .pie-de-pagina__logo-imagen {
-        width: 70px;
+        width: 50px;
     }
 
     .titulo-frase__titulo-nombre {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
 
     .titulo-frase__descripcion {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .pie-de-pagina__titulo {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .pie-de-pagina__enlace {
-        font-size: 1rem;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
     }
 
     .pie-de-pagina__lista_inferior {
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .pie-de-pagina__grupo-copyright {
         width: 100%;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
     .pie-de-pagina__grupo-fecha {
@@ -1340,7 +1346,7 @@ body {
     }
 
     .pie-de-pagina__fecha-hora {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
 }
