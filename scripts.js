@@ -1,213 +1,223 @@
-document.addEventListener("DOMContentLoaded", () => {
-    inicializarCanvasAnimado();
-    manejarPresentacion();
-    rotarIconosPresentacion();
-    configurarModal();
-    iniciarFechaHora();
-    mostrarCopyright();
-    configurarMenu();
+/* ================================================
+   UTILS
+   ================================================ */
+const $  = id  => document.getElementById(id);
+const $$ = sel => document.querySelectorAll(sel);
+
+/* ================================================
+   AÑO EN FOOTER
+   ================================================ */
+$('year').textContent = new Date().getFullYear();
+
+/* ================================================
+   DARK MODE — persiste en localStorage
+   y respeta prefers-color-scheme
+   ================================================ */
+const html     = document.documentElement;
+const themeBtn = $('theme-btn');
+const KEY      = 'as-theme';
+
+const saved = localStorage.getItem(KEY)
+  || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+html.dataset.theme = saved;
+
+themeBtn.addEventListener('click', () => {
+  const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+  html.dataset.theme = next;
+  localStorage.setItem(KEY, next);
 });
 
-// Inicialización del canvas de partículas
-function inicializarCanvasAnimado() {
-    const canvas = document.getElementById("neuronas-canvas");
-    const ctx = canvas.getContext("2d");
-  
-    let width, height;
-    let particles = [];
-    const maxDistance = 160;
-  
-    function resizeCanvas() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+/* ================================================
+   BARRA DE PROGRESO DE SCROLL
+   ================================================ */
+const bar = $('progress-bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = pct.toFixed(1) + '%';
+}, { passive: true });
+
+/* ================================================
+   NAVBAR — sombra al scrollear + link activo
+   ================================================ */
+const navbar   = $('navbar');
+const navLinks = $$('.nav-links a');
+const sections = $$('section[id]');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive: true });
+
+/* Resalta el link de la sección visible */
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    navLinks.forEach(a =>
+      a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)
+    );
+  });
+}, { threshold: .35 });
+
+sections.forEach(s => navObs.observe(s));
+
+/* ================================================
+   MENÚ HAMBURGUESA
+   ================================================ */
+const hamburger = $('hamburger');
+const navList   = $('nav-links');
+
+hamburger.addEventListener('click', () => {
+  const open = navList.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+});
+
+navList.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navList.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* Cierra menú si se hace click fuera */
+document.addEventListener('click', e => {
+  if (!navbar.contains(e.target)) {
+    navList.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* ================================================
+   TYPEWRITER
+   ================================================ */
+const roles = [
+  'Técnico Superior en Cs. de Datos',
+  'Desarrollador Web',
+  'Analista de Datos',
+  'Desarrollador Python & Django',
+];
+
+const tw = $('tw');
+let ri = 0, ci = 0, deleting = false;
+
+function type() {
+  const word = roles[ri];
+
+  if (!deleting) {
+    tw.textContent = word.slice(0, ++ci);
+    if (ci === word.length) {
+      deleting = true;
+      return setTimeout(type, 2000);
     }
-  
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    const particleCount = window.innerWidth <= 768 ? 50 : Math.max(100, Math.min(300, window.innerWidth / 4));
-  
-    function createParticles() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-
-                x: Math.random() * width,
-                y: Math.random() * height,
-
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-
-                radius: Math.random() * (window.innerWidth <= 768 ? 1.2 : 1.9) + 1,
-                pulse: Math.random() * Math.PI * 2,
-                redLightPosition: 0 
-            });
-        }
-    }
-  
-    function drawGlow(x, y, r, color) {
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, r * 6);
-        gradient.addColorStop(0, color);
-        gradient.addColorStop(1, "transparent");
-        ctx.beginPath();
-        ctx.fillStyle = gradient;
-        ctx.arc(x, y, r * 6, 0, Math.PI * 2);
-        ctx.fill();
-    }
-  
-    function drawParticles() {
-        ctx.clearRect(0, 0, width, height);
-  
-        for (let i = 0; i < particles.length; i++) {
-            const p1 = particles[i];
-  
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const dx = p1.x - p2.x;
-                const dy = p1.y - p2.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-  
-                if (dist < maxDistance) {
-                    const opacity = 1 - dist / maxDistance;
-  
-                    ctx.strokeStyle = `rgba(0,200,255,${opacity * 0.6})`;
-                    ctx.lineWidth = 0.8;
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-  
-                    ctx.strokeStyle = `rgba(255,0,0,0.9)`;
-                    ctx.lineWidth = 2;
-  
-                    const redLightPosition = p1.redLightPosition;
-                    const x1 = p1.x + (p2.x - p1.x) * redLightPosition;
-                    const y1 = p1.y + (p2.y - p1.y) * redLightPosition;
-  
-                    const x2 = p1.x + (p2.x - p1.x) * (redLightPosition + 0.02);
-                    const y2 = p1.y + (p2.y - p1.y) * (redLightPosition + 0.02);
-  
-                    ctx.beginPath();
-                    ctx.moveTo(x1, y1);
-                    ctx.lineTo(x2, y2);
-                    ctx.stroke();
-  
-                    p1.redLightPosition += 0.01;
-                    if (p1.redLightPosition >= 1) p1.redLightPosition = 0;
-                }
-            }
-  
-            p1.pulse += 0.05;
-            const pulseRadius = p1.radius + Math.sin(p1.pulse) * 0.4;
-  
-            ctx.fillStyle = "rgba(0,200,255,0.9)";
-            ctx.beginPath();
-            ctx.arc(p1.x, p1.y, pulseRadius, 0, Math.PI * 2);
-            ctx.fill();
-  
-            drawGlow(p1.x, p1.y, pulseRadius, "rgba(0,150,255,0.6)");
-  
-            p1.x += p1.vx;
-            p1.y += p1.vy;
-  
-            if (p1.x <= 0 || p1.x >= width) p1.vx *= -1;
-            if (p1.y <= 0 || p1.y >= height) p1.vy *= -1;
-        }
-  
-        requestAnimationFrame(drawParticles);
-    }
-  
-    createParticles();
-    drawParticles();
-}
-
-// Manejo de la presentación
-function manejarPresentacion() {
-  setTimeout(() => {
-      const contenedor = document.querySelector('.presentacion__contenedor');
-      if (contenedor) contenedor.style.opacity = 1;
-  }, 1000);
-}
-
-// Rotación de íconos en presentación
-function rotarIconosPresentacion() {
-  const imagenes = document.querySelectorAll('.presentacion__iconos-fondo img');
-  let indice = 0;
-
-  function mostrarSiguienteImagen() {
-      imagenes.forEach(img => img.style.opacity = '0');
-      imagenes[indice].style.opacity = '0.3';
-      indice = (indice + 1) % imagenes.length;
+    return setTimeout(type, 60);
   }
 
-  mostrarSiguienteImagen();
-  setInterval(mostrarSiguienteImagen, 5000);
-}
-
-// Configuración del modal
-function configurarModal() {
-  const botones = document.querySelectorAll('.proyectos__boton');
-  const modal = document.getElementById('modalImagen');
-  const imagenModal = document.getElementById('imagenModal');
-  const cerrarModal = document.getElementById('cerrarModal');
-
-  botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-          const imgSrc = boton.getAttribute('data-img');
-          imagenModal.src = imgSrc;
-          modal.style.display = 'flex';
-      });
-  });
-
-  cerrarModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-      imagenModal.src = '';
-  });
-
-  modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-          modal.style.display = 'none';
-          imagenModal.src = '';
-      }
-  });
-}
-
-// Mostrar fecha y hora actual
-function iniciarFechaHora() {
-  const fechaElemento = document.getElementById("fecha-hora-actual");
-  if (!fechaElemento) return;
-
-  function actualizarFechaHora() {
-      const ahora = new Date();
-      const opciones = {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit"
-      };
-      const formato = new Intl.DateTimeFormat("es-AR", opciones).format(ahora);
-      fechaElemento.textContent = formato;
+  tw.textContent = word.slice(0, --ci);
+  if (ci === 0) {
+    deleting = false;
+    ri = (ri + 1) % roles.length;
+    return setTimeout(type, 400);
   }
-
-  actualizarFechaHora();
-  setInterval(actualizarFechaHora, 1000);
+  setTimeout(type, 30);
 }
 
-// Mostrar copyright
-function mostrarCopyright() {
-  const anio = new Date().getFullYear();
-  document.getElementById("copyright").innerHTML = `&copy; ${anio} Alexis Sandoval. Todos los derechos reservados.`;
-}
+setTimeout(type, 700);
 
-// Configuración del menú
-function configurarMenu() {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('.navegacion__menu');
-  
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('activo');
+/* ================================================
+   SCROLL REVEAL con IntersectionObserver
+   ================================================ */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    revealObs.unobserve(e.target);
+  });
+}, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+
+$$('.reveal').forEach(el => revealObs.observe(el));
+
+/* ================================================
+   FILTRO DE PROYECTOS
+   ================================================ */
+const filterBtns = $$('.filter-btn');
+const cards      = $$('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const f = btn.dataset.filter;
+
+    cards.forEach(card => {
+      const show = f === 'all' || card.dataset.category === f;
+      card.classList.toggle('hidden', !show);
+      /* Fuerza reveal si recién se hace visible */
+      if (show) card.classList.add('visible');
     });
+  });
+});
+
+/* ================================================
+   FORMULARIO DE CONTACTO
+   ================================================ */
+const form      = $('contact-form');
+const notice    = $('form-notice');
+const submitBtn = $('submit-btn');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const nombre  = form.nombre.value.trim();
+  const email   = form.email.value.trim();
+  const mensaje = form.mensaje.value.trim();
+
+  if (!nombre || !email || !mensaje) {
+    setNotice('Por favor completá los campos obligatorios.', 'err');
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setNotice('Ingresá un email válido.', 'err');
+    return;
+  }
+
+  /* Estado de carga */
+  submitBtn.disabled = true;
+  submitBtn.querySelector('span').textContent = 'Enviando…';
+
+  /*
+   * TODO: conectar con un servicio de envío real.
+   * Opciones recomendadas (gratis):
+   *   • Formspree  → agregar action="https://formspree.io/f/TU_ID" al <form>
+   *   • Web3Forms  → fetch('https://api.web3forms.com/submit', { ... })
+   *   • EmailJS    → emailjs.send(serviceId, templateId, params)
+   */
+  await new Promise(r => setTimeout(r, 1000)); /* Simula envío */
+
+  setNotice('¡Mensaje enviado! Te respondo a la brevedad.', 'ok');
+  form.reset();
+  submitBtn.disabled = false;
+  submitBtn.querySelector('span').textContent = 'Enviar mensaje';
+});
+
+function setNotice(msg, type) {
+  notice.textContent = msg;
+  notice.className   = 'form-notice ' + type;
+  setTimeout(() => { notice.textContent = ''; notice.className = 'form-notice'; }, 5000);
 }
+
+/* ================================================
+   BOTÓN VOLVER ARRIBA
+   ================================================ */
+const backTop = $('back-top');
+
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+
+backTop.addEventListener('click', () =>
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+);
